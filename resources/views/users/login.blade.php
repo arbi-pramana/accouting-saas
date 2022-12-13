@@ -21,31 +21,42 @@
                                         <img src="ule/assets/images/f-logo.png" alt="">
                                     </a>
                                 </div>
-                                <h4 class="text-center m-t-15">Log into Your Account</h4>
-                                <form class="m-t-30 m-b-30">
+                                <h4 class="text-center m-t-15">Masuk ke Akun Anda</h4>
+                                @if (\Session::has('danger'))
+                                    <div class="alert alert-danger">
+                                        {!! \Session::get('danger') !!}
+                                    </div>
+                                @endif
+                                @if (\Session::has('success'))
+                                    <div class="alert alert-success">
+                                        {!! \Session::get('success') !!}
+                                    </div>
+                                @endif
+                                <form class="m-t-30 m-b-30" action="{{route('users.auth')}}" method="post">
+                                    @csrf
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" name="password" class="form-control" placeholder="Password">
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <div class="form-check p-l-0">
                                                 <input class="form-check-input" type="checkbox" id="basic_checkbox_1">
-                                                <label class="form-check-label" for="basic_checkbox_1">Remember Me</label>
+                                                <label class="form-check-label" for="basic_checkbox_1">Ingat Saya</label>
                                             </div>
                                         </div>
-                                        <div class="form-group col-md-6 text-right"><a href="{{route('users.forgot-password')}}">Forgot Password?</a>
+                                        <div class="form-group col-md-6 text-right"><a href="{{route('users.forgot-password')}}">Lupa Password?</a>
                                         </div>
                                     </div>
                                     <div class="text-center m-b-15 m-t-15">
-                                        <button type="submit" class="btn btn-primary">Sign in</button>
+                                        <button type="submit" class="btn btn-primary">Masuk</button>
                                     </div>
                                 </form>
-                                <div class="text-right">Didn't have account? <a href="{{route('users.register')}}">Sign Up</a></div>
+                                <div class="text-right">Tidak memiliki akun? <a href="{{route('users.register')}}">Daftar</a></div>
                             </div>
                         </div>
                     </div>

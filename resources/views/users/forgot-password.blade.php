@@ -21,11 +21,22 @@
                                         <img src="ule/assets/images/f-logo.png" alt="">
                                     </a>
                                 </div>
-                                <h4 class="text-center m-t-15">Forgot Your Password</h4>
-                                <form class="m-t-30 m-b-30">
+                                <h4 class="text-center m-t-15">Lupa kata sandi Anda</h4>
+                                @if (\Session::has('danger'))
+                                    <div class="alert alert-danger">
+                                        {!! \Session::get('danger') !!}
+                                    </div>
+                                @endif
+                                @if (\Session::has('success'))
+                                    <div class="alert alert-success">
+                                        {!! \Session::get('success') !!}
+                                    </div>
+                                @endif
+                                <form action="{{route('users.forgot-password.store')}}" class="m-t-30 m-b-30" method="post">
+                                    @csrf
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
                                     </div>
                                     <div class="text-center m-b-15 m-t-15">
                                         <button type="submit" class="btn btn-primary">Submit</button>

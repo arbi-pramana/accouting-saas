@@ -249,7 +249,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('users.logout')}}">
                                         <i class="icon-power"></i>
                                         <span>Logout</span>
                                     </a>

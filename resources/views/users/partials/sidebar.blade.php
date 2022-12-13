@@ -35,545 +35,97 @@
         <ul class="metismenu" id="menu">
             <li class="nav-label">Main</li>
             <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class=" mdi mdi-view-dashboard"></i>
-                    <span class="nav-text">Dashboard</span>
-                    <span class="badge badge-danger nav-badge">10</span>
+                <a href="app-profile.html">
+                    <i class="mdi mdi-view-dashboard"></i>
+                    <span class="nav-text">Summary Dashboard</span>
                 </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="index.html">Dashnoard 1</a>
-                    </li>
-                    <li>
-                        <a href="index2.html">Dashnoard 2</a>
-                    </li>
-                    <li>
-                        <a href="index3.html">Dashnoard 3</a>
-                    </li>
-                    <li>
-                        <a href="index4.html">Dashnoard 4</a>
-                    </li>
-                    <li>
-                        <a href="index5.html">Dashnoard 5</a>
-                    </li>
-                    <li>
-                        <a href="index6.html">Dashnoard 6</a>
-                    </li>
-                    <li>
-                        <a href="index7.html">Dashnoard 7</a>
-                    </li>
-                    <li>
-                        <a href="index8.html">Dashnoard 8</a>
-                    </li>
-                    <li>
-                        <a href="index9.html">Dashnoard 9</a>
-                    </li>
-                    <li>
-                        <a href="index10.html">Dashnoard 10</a>
-                    </li>
-                </ul>
             </li>
-
             <li>
                 <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="fa fa-btc"></i>
-                    <span class="nav-text">Crypto</span>
-                    <span class="badge badge-primary nav-badge">18</span>
+                    <i class="mdi mdi-book-open-page-variant"></i>
+                    <span class="nav-text">Transaksi</span>
                 </a>
                 <ul aria-expanded="false">
                     <li>
-                        <a href="ico-countdown.html">Countdown</a>
+                        <a href="index.html">Transaksi Kas & Bank</a>
                     </li>
                     <li>
-                        <a href="ico-market-cap.html">Market Capitalization</a>
+                        <a href="index.html">Pembelian</a>
                     </li>
                     <li>
-                        <a href="ico-transaction.html">Transaction</a>
+                        <a href="index.html">Penjualan</a>
                     </li>
                     <li>
-                        <a href="ico-gainers-loosers.html">Gainers / Loosers</a>
+                        <a href="index2.html">Jurnal Umum</a>
                     </li>
                     <li>
-                        <a href="ico-timeline.html">Timeline</a>
-                    </li>
-                    <li>
-                        <a href="ico-progressbar.html">Progressbar</a>
-                    </li>
-                    <li>
-                        <a href="ico-exchange.html">Exchange</a>
-                    </li>
-                    <li>
-                        <a href="ico-advisor.html">Advisor</a>
-                    </li>
-                    <li>
-                        <a href="ico-advisor-profile.html">Advisor Profile</a>
-                    </li>
-                    <li>
-                        <a href="ico-counter.html">Counters</a>
-                    </li>
-                    <li>
-                        <a href="ico-trading-view.html">Trading View</a>
-                    </li>
-                    <li>
-                        <a href="ico-payment-gateway.html">Payment Gateway</a>
-                    </li>
-                    <li>
-                        <a href="ico-wallet.html">Wallet</a>
+                        <a href="index3.html">Periksa Selisih</a>
                     </li>
                 </ul>
             </li>
-
             <li>
                 <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-widgets"></i>
-                    <span class="nav-text">Layouts</span>
+                    <i class=" mdi mdi-chart-bar"></i>
+                    <span class="nav-text">Laporan</span>
                 </a>
                 <ul aria-expanded="false">
                     <li>
-                        <a href="layout-blank.html">Blank</a>
+                        <a href="index.html">Laporan Neraca</a>
                     </li>
                     <li>
-                        <a href="layout-boxed.html">Boxed</a>
+                        <a href="index.html">Laporan Laba Rugi</a>
                     </li>
                     <li>
-                        <a href="layout-fixed-header.html">Fixed Header</a>
+                        <a href="index.html">Laporan Trial Balance</a>
                     </li>
                     <li>
-                        <a href="layout-fixed-sidebar.html">Fixed Sidebar</a>
+                        <a href="index2.html">Laporan Penjualan</a>
                     </li>
                     <li>
-                        <a href="layout-starter-kit.html">Starter Kit</a>
+                        <a href="index3.html">Laporan Pembelian</a>
+                    </li>
+                    <li>
+                        <a href="index5.html">Buku Hutang</a>
+                    </li>
+                    <li>
+                        <a href="index6.html">Buku Piutang</a>
+                    </li>
+                    <li>
+                        <a href="index4.html">Kartu Stok Barang</a>
+                    </li>
+                    <li>
+                        <a href="index7.html">Buku Besar</a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-label">APPS</li>
+            <li class="nav-label">Setup</li>
             <li>
                 <a href="app-profile.html">
-                    <i class="mdi mdi-account"></i>
-                    <span class="nav-text">Profile</span>
+                    <i class="fa fa-list"></i>
+                    <span class="nav-text">Chart of Account</span>
                 </a>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-chart-bar"></i>
-                    <span class="nav-text">Charts</span>
-                    <span class="badge badge-warning nav-badge">14</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="chart-amchart.html">AmChart</a>
-                    </li>
-                    <li>
-                        <a href="chart-c3.html">C3 Chart</a>
-                    </li>
-                    <li>
-                        <a href="chart-flot.html">Flot</a>
-                    </li>
-                    <li>
-                        <a href="chart-morris.html">Morris</a>
-                    </li>
-                    <li>
-                        <a href="chart-chartjs.html">Chartjs</a>
-                    </li>
-                    <li>
-                        <a href="chart-chartjs-candlestick.html">Candlestick</a>
-                    </li>
-                    <li>
-                        <a href="chart-chartjs-data-labels.html">Datalabels</a>
-                    </li>
-                    <li>
-                        <a href="chart-chartjs-stream.html">Live Stream</a>
-                    </li>
-                    <li>
-                        <a href="chart-chartist.html">Chartist</a>
-                    </li>
-                    <li>
-                        <a href="chart-sparkline.html">Sparkline</a>
-                    </li>
-                    <li>
-                        <a href="chart-echart.html">Echart</a>
-                    </li>
-                    <li>
-                        <a href="chart-google.html">Google</a>
-                    </li>
-                    <li>
-                        <a href="chart-highchart.html">Highchart</a>
-                    </li>
-                    <li>
-                        <a href="chart-rickshaw.html">Rickshaw</a>
-                    </li>
-                    <li>
-                        <a href="chart-justgage.html">Justgage</a>
-                    </li>
-                    <li>
-                        <a href="chart-knob.html">Knob</a>
-                    </li>
-                    <li>
-                        <a href="chart-peity.html">Peity</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-email"></i>
-                    <span class="nav-text">Email</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="email-inbox.html">Inbox</a>
-                    </li>
-                    <li>
-                        <a href="email-read.html">Read</a>
-                    </li>
-                    <li>
-                        <a href="email-compose.html">Compose</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-calendar-check"></i>
-                    <span class="nav-text">Calendar</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="calender-event.html">Event</a>
-                    </li>
-                    <li>
-                        <a href="calender-date.html">Date</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-widgets"></i>
-                    <span class="nav-text">Basic Widget</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="widget-basic-card.html">Card</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-palette-advanced"></i>
-                    <span class="nav-text">Advanced Widget</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="widget-advanced-chartjs.html">Chartjs</a>
-                    </li>
-                    <li>
-                        <a href="widget-advanced-media.html">Media Object</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-label">UI &amp; Plugin</li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-trophy"></i>
-                    <span class="nav-text">Components</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="uc-nestedable.html">Nestedable</a>
-                    </li>
-                    <li>
-                        <a href="uc-sweetalert.html">Sweetalert</a>
-                    </li>
-                    <li>
-                        <a href="uc-toastr.html">Toastr</a>
-                    </li>
-                    <li>
-                        <a href="uc-weather.html">Weather</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-diamond"></i>
-                    <span class="nav-text">UI Features</span>
-                    <span class="badge badge-success nav-badge">16</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="ui-accordion.html">Accordion</a>
-                    </li>
-                    <li>
-                        <a href="ui-alert.html">Alert</a>
-                    </li>
-                    <li>
-                        <a href="ui-badge.html">Badge</a>
-                    </li>
-                    <li>
-                        <a href="ui-button.html">Button</a>
-                    </li>
-                    <li>
-                        <a href="ui-button-group.html">Button Group</a>
-                    </li>
-                    <li>
-                        <a href="ui-cards.html">Cards</a>
-                    </li>
-                    <li>
-                        <a href="ui-carousel.html">Carousel</a>
-                    </li>
-                    <li>
-                        <a href="ui-dropdown.html">Dropdown</a>
-                    </li>
-                    <li>
-                        <a href="ui-list-group.html">List Group</a>
-                    </li>
-                    <li>
-                        <a href="ui-media-object.html">Media Object</a>
-                    </li>
-                    <li>
-                        <a href="ui-modal.html">Modal</a>
-                    </li>
-                    <li>
-                        <a href="ui-pagination.html">Pagination</a>
-                    </li>
-                    <li>
-                        <a href="ui-popover.html">Popover</a>
-                    </li>
-                    <li>
-                        <a href="ui-progressbar.html">Progressbar</a>
-                    </li>
-                    <li>
-                        <a href="ui-tab.html">Tab</a>
-                    </li>
-                    <li>
-                        <a href="ui-typography.html">Typography</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-nfc-variant"></i>
-                    <span class="nav-text">Form Stuff</span>
-                    <span class="badge badge-primary nav-badge">14</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="form-basic.html">Basic Forms</a>
-                    </li>
-                    <li>
-                        <a href="form-layout.html">Form Layout</a>
-                    </li>
-                    <li>
-                        <a href="form-addons.html">Form Addons</a>
-                    </li>
-                    <li>
-                        <a href="form-checkbox.html">Form Checkbox</a>
-                    </li>
-                    <li>
-                        <a href="form-validation.html">Form Validation</a>
-                    </li>
-                    <li>
-                        <a href="form-editor.html">Form Editor</a>
-                    </li>
-                    <li>
-                        <a href="form-icheck.html">Form iCheck</a>
-                    </li>
-                    <li>
-                        <a href="form-pickers.html">Form Pickers</a>
-                    </li>
-                    <li>
-                        <a href="form-radio-button.html">Form Radio Button</a>
-                    </li>
-                    <li>
-                        <a href="form-summernote.html">Form Summernote</a>
-                    </li>
-                    <li>
-                        <a href="form-switch.html">Form Switch</a>
-                    </li>
-                    <li>
-                        <a href="form-typehead.html">Form Typehead</a>
-                    </li>
-                    <li>
-                        <a href="form-xeditable.html">Form Xeditable</a>
-                    </li>
-                    <li>
-                        <a href="form-dropzone.html">Form Dropzone</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-bootstrap"></i>
-                    <span class="nav-text">BS Table</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="table-basic.html">Basic</a>
-                    </li>
-                    <li>
-                        <a href="table-layout.html">Table Layout</a>
-                    </li>
-                </ul>
             </li>
             <li>
                 <a class="has-arrow" href="#" aria-expanded="false">
                     <i class="mdi mdi-table-edit"></i>
-                    <span class="nav-text">Datatable</span>
+                    <span class="nav-text">Data Master</span>
                 </a>
                 <ul aria-expanded="false">
                     <li>
-                        <a href="table-dt-basic.html">Datatable Basic</a>
+                        <a href="index.html">Data Barang</a>
                     </li>
                     <li>
-                        <a href="table-dt-basic-button.html">Datatable Basic Button</a>
+                        <a href="index.html">Data Pelanggan</a>
                     </li>
                     <li>
-                        <a href="table-dt-data-source.html">Datatable Data Source</a>
-                    </li>
-                    <li>
-                        <a href="table-dt-styling.html">Datatable Style</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-table-row-height"></i>
-                    <span class="nav-text">Datatable Extension</span>
-                    <span class="badge badge-warning nav-badge">10</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="table-dt-extension-autofill.html">Autofill</a>
-                    </li>
-                    <li class="">
-                        <a href="table-dt-extension-button-api.html">Button API</a>
-                    </li>
-                    <li>
-                        <a href="table-dt-extension-button-basic.html">Button Basic</a>
-                    </li>
-                    <li>
-                        <a href="table-dt-extension-button-column-visibility.html">Button Column Visibility</a>
-                    </li>
-                    <li>
-                        <a href="table-dt-extension-button-flash-data-export.html">Flash Data Export</a>
-                    </li>
-                    <li>
-                        <a href="table-dt-extension-button-html5-data-export.html">HTML5 Data Export</a>
-                    </li>
-                    <li>
-                        <a href="table-dt-extension-button-print.html">Button Print</a>
-                    </li>
-                    <li>
-                        <a href="table-dt-extension-column-reorder.html">Column Render</a>
-                    </li>
-                    <li>
-                        <a href="table-dt-extension-fixed-column.html">Fixed Column</a>
-                    </li>
-                    <li>
-                        <a href="table-dt-extension-key-table.html">Key Table</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-map-marker"></i>
-                    <span class="nav-text">Map</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="map-datamap.html">Data Map</a>
-                    </li>
-                    <li>
-                        <a href="map-vectormap.html">Vector Map</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-label">Extra</li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-google-pages"></i>
-                    <span class="nav-text">Pages</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="page-login.html">Login</a>
-                    </li>
-                    <li>
-                        <a href="page-login2.html">Login 2</a>
-                    </li>
-                    <li>
-                        <a href="page-register.html">Register</a>
-                    </li>
-                    <li>
-                        <a href="page-register2.html">Register 2</a>
-                    </li>
-                    <li>
-                        <a href="page-lock-screen.html">Lock Screen</a>
-                    </li>
-                    <li>
-                        <a href="page-recover.html">Recover</a>
-                    </li>
-                    <li>
-                        <a href="page-error-400.html">Error 400</a>
-                    </li>
-                    <li>
-                        <a href="page-error-403.html">Error 403</a>
-                    </li>
-                    <li>
-                        <a href="page-error-404.html">Error 404</a>
-                    </li>
-                    <li>
-                        <a href="page-error-500.html">Error 500</a>
-                    </li>
-                    <li>
-                        <a href="page-error-503.html">Error 503</a>
-                    </li>
-                    <li>
-                        <a href="page-one-column.html">One Column</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="page-invoice.html">
-                    <i class="mdi mdi-square-edit-outline"></i>
-                    <span class="nav-text">Invoice Summary</span>
-                </a>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class="mdi mdi-arrow-down-bold"></i>
-                    <span class="nav-text">Multi Level</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li>
-                        <a href="#">item 1.1</a>
-                    </li>
-                    <li>
-                        <a href="#">item 1.2</a>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="#" aria-expanded="false">Menu 1.3</a>
-                        <ul aria-expanded="false">
-                            <li>
-                                <a href="#">item 1.3.1</a>
-                            </li>
-                            <li>
-                                <a href="#">item 1.3.2</a>
-                            </li>
-                            <li>
-                                <a href="#">item 1.3.3</a>
-                            </li>
-                            <li>
-                                <a href="#">item 1.3.4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Last Nav</a>
+                        <a href="index.html">Data Supplier</a>
                     </li>
                 </ul>
             </li>
             <li class="">
                 <a href="documentation.html">
-                    <i class="mdi mdi-book-open-page-variant"></i>
-                    <span class="nav-text">Documentation</span>
+                    <i class="fa fa-question-circle"></i>
+                    <span class="nav-text">Help</span>
                 </a>
             </li>
         </ul>
