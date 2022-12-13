@@ -3,6 +3,7 @@
 use App\Http\Controllers\Users\ForgotPasswordController;
 use App\Http\Controllers\Users\RegisterController;
 use App\Http\Controllers\Users\DashboardController;
+use App\Http\Controllers\Users\EmployeeController;
 use App\Http\Controllers\Users\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,4 +34,5 @@ Route::post('forgot-password/store-new-password',ForgotPasswordController::class
 Route::group(['middleware'=>'users.auth','prefix'=>'users'],function(){
     Route::get('logout',LoginController::class.'@logout')->name('users.logout');
     Route::get('dashboard',DashboardController::class.'@index')->name('users.dashboard');
+    Route::resource('employee',EmployeeController::class);
 });

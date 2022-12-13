@@ -120,7 +120,16 @@
                     <li>
                         <a href="index.html">Data Supplier</a>
                     </li>
+                    <li>
+                        <a href="{{route('employee.index')}}">Data Karyawan</a>
+                    </li>
                 </ul>
+            </li>
+            <li class="">
+                <a href="documentation.html">
+                    <i class="fa fa-gears"></i>
+                    <span class="nav-text">Business Info</span>
+                </a>
             </li>
             <li class="">
                 <a href="documentation.html">
