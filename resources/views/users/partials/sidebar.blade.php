@@ -115,10 +115,10 @@
                         <a href="index.html">Data Barang</a>
                     </li>
                     <li>
-                        <a href="index.html">Data Pelanggan</a>
+                        <a href="{{route('customer.index')}}">Data Pelanggan</a>
                     </li>
                     <li>
-                        <a href="index.html">Data Supplier</a>
+                        <a href="{{route('supplier.index')}}">Data Supplier</a>
                     </li>
                     <li>
                         <a href="{{route('employee.index')}}">Data Karyawan</a>

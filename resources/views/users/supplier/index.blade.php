@@ -8,17 +8,16 @@
                 <li class="breadcrumb-item"><a href="">Users</a>
                 </li>
                 <li class="breadcrumb-item active">Data Master</li>
-                <li class="breadcrumb-item active">Employee</li>
+                <li class="breadcrumb-item active">Supplier</li>
             </ol>
         </div>
     </div>
-    <!-- row -->
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
                     <div class="form-inline">
-                        <h4 class="card-title mr-4">Data Karyawan</h4>
+                        <h4 class="card-title mr-4">Data Supplier</h4>
                         <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modalAdd"><i class="fa fa-plus"></i> Tambah Baru </button>
                     </div>
                     @if (\Session::has('danger'))
@@ -39,40 +38,39 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Is Active?</th>
+                                    <th>Address</th>
+                                    <th>Description</th>
+                                    <th>Remarks</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($users as $i => $user)
+                                @foreach($suppliers as $i => $supplier)
                                     <tr>
                                         <td> {{$i+1}} </td>
-                                        <td> {{$user->name}} </td>
-                                        <td> {{$user->email}} </td>
-                                        <td> {{$user->phone}} </td>
-                                        <td> 
-                                            @if($user->is_active == "1")
-                                                <label class="btn btn-sm btn-success">Active</label>
-                                                @else
-                                                <label class="btn btn-sm btn-danger">Inactive</label>
-                                            @endif
-                                        </td>
+                                        <td> {{$supplier->name}} </td>
+                                        <td> {{$supplier->email}} </td>
+                                        <td> {{$supplier->phone}} </td>
+                                        <td> {{$supplier->address}} </td>
+                                        <td> {{$supplier->description}} </td>
+                                        <td> {{$supplier->remarks}} </td>
                                         <td>
                                             <button type="button" class="btn btn-sm btn-primary"
-                                                id="edit-{{$user->id}}"
-                                                data-id="{{$user->id}}" 
-                                                data-name="{{$user->name}}" 
-                                                data-email="{{$user->email}}" 
-                                                data-phone="{{$user->phone}}" 
-                                                data-is_active="{{$user->is_active}}" 
+                                                id="edit-{{$supplier->id}}"
+                                                data-id="{{$supplier->id}}" 
+                                                data-name="{{$supplier->name}}" 
+                                                data-email="{{$supplier->email}}" 
+                                                data-phone="{{$supplier->phone}}" 
+                                                data-address="{{$supplier->address}}" 
+                                                data-description="{{$supplier->description}}" 
                                                 data-toggle="modal" 
                                                 data-target="#modalEdit"
-                                                onclick="editData('{{$user->id}}')"
+                                                onclick="editData('{{$supplier->id}}')"
                                                 ><i class="fa fa-pencil"></i> </button>
                                             <button type="button" class="btn btn-sm btn-danger" 
                                             data-toggle="modal" 
                                             data-target="#modalDelete"
-                                            onclick="deleteData('{{$user->id}}')"
+                                            onclick="deleteData('{{$supplier->id}}')"
                                             ><i class="fa fa-trash"></i>  </button>
                                         </td>
                                     </tr>
@@ -94,7 +92,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                 </button>
             </div>
-            <form action="{{route('employee.store')}}" method="post">
+            <form action="{{route('supplier.store')}}" method="post">
                 @csrf
                 <div class="modal-body">
                     Name <br>
@@ -103,13 +101,10 @@
                     <input type="email" class="form-control" name="email" required><br>
                     Phone <br>
                     <input type="text" class="form-control" name="phone" required><br>
-                    Password <br>
-                    <input type="password" class="form-control" name="password" required><br>
-                    Is Active?
-                    <select name="is_active" class="form-control" required>
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
-                    </select>
+                    Address <br>
+                    <textarea name="address" class="form-control" cols="30" rows="10"></textarea>
+                    Description <br>
+                    <textarea name="description" class="form-control" cols="30" rows="10"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -138,14 +133,11 @@
                     <input type="email" class="form-control" id="edit-email" name="email" required><br>
                     Phone <br>
                     <input type="text" class="form-control" id="edit-phone" name="phone" required><br>
-                    Password <br>
-                    <input type="password" class="form-control" id="edit-password" name="password"><br>
-                    Is Active?
-                    <select name="is_active" class="form-control" id="edit-is_active" required>
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
-                    </select>
-                </div>
+                    Address <br>
+                    <textarea name="address" id="edit-address" class="form-control" cols="30" rows="10"></textarea>
+                    Description <br>
+                        <textarea name="description" id="edit-description" class="form-control" cols="30" rows="10"></textarea>
+                    </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <input type="submit" class="btn btn-success" value="Save changes">
@@ -184,14 +176,13 @@
         $("#edit-name").val($("#edit-"+id).data("name"))
         $("#edit-email").val($("#edit-"+id).data("email"))
         $("#edit-phone").val($("#edit-"+id).data("phone"))
-        $("#edit-password").val($("#edit-"+id).data("password"))
-        $("#edit-password").val($("#edit-"+id).data("password"))
-        $("#edit-is_active").val($("#edit-"+id).data("is_active"))
-        $("#editForm").attr("action","{{url('users/employee')}}"+"/"+id)
+        $("#edit-address").val($("#edit-"+id).data("address"))
+        $("#edit-description").val($("#edit-"+id).data("description"))
+        $("#editForm").attr("action","{{url('users/supplier')}}"+"/"+id)
     }
     
     function deleteData(id){
-        $("#deleteForm").attr("action","{{url('users/employee')}}"+"/"+id)
+        $("#deleteForm").attr("action","{{url('users/supplier')}}"+"/"+id)
     }
 </script>
 @stop

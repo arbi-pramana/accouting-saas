@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\Users\CustomerController;
 use App\Http\Controllers\Users\ForgotPasswordController;
 use App\Http\Controllers\Users\RegisterController;
 use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\EmployeeController;
 use App\Http\Controllers\Users\LoginController;
+use App\Http\Controllers\Users\ProductCategoryController;
+use App\Http\Controllers\Users\ProductController;
+use App\Http\Controllers\Users\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,4 +39,8 @@ Route::group(['middleware'=>'users.auth','prefix'=>'users'],function(){
     Route::get('logout',LoginController::class.'@logout')->name('users.logout');
     Route::get('dashboard',DashboardController::class.'@index')->name('users.dashboard');
     Route::resource('employee',EmployeeController::class);
+    Route::resource('supplier', SupplierController::class);
+    Route::resource('customer', CustomerController::class);
+    Route::resource('product', ProductController::class);
+    Route::resource('productcategory', ProductCategoryController::class);
 });
