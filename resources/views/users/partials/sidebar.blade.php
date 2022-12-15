@@ -25,7 +25,7 @@
                         <a href="index2.html">Entri Jurnal</a>
                     </li>
                     <li>
-                        <a href="index.html">Pembelian</a>
+                        <a href="{{route('purchase.index')}}">Pembelian</a>
                     </li>
                     <li>
                         <a href="index.html">Penjualan</a>

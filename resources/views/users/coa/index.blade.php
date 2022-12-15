@@ -34,7 +34,7 @@
                         <table class="table table-striped table-bordered zero-configuration">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>COA</th>
                                     <th>Kategori 1</th>
                                     <th>Kategori 2</th>
                                     <th>Nama Akun</th>
@@ -49,7 +49,7 @@
                             <tbody>
                                 @foreach($coas as $i => $coa)
                                     <tr>
-                                        <td> {{$i+1}} </td>
+                                        <td> {{$coa->coa}} </td>
                                         <td> {{$coa->category_1}} </td>
                                         <td> {{$coa->category_2}} </td>
                                         <td> {{$coa->name}} </td>
