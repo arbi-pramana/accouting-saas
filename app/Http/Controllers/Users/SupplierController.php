@@ -77,15 +77,11 @@ class SupplierController extends Controller
 	 */
 	public function update($id, Request $request)
 	{
+		$data = $request->all();
 		$supplier = Supplier::find($id);
-		$supplier->name = $request->name;
-		$supplier->email = $request->email;
-		$supplier->phone = $request->phone;
-		$supplier->address = $request->address;
-		$supplier->description = $request->description;
-        $supplier->remarks = $this->remarks();
-		$supplier->create_by = $this->create_by();
-		$supplier->save();
+        $data['remarks'] = $this->remarks();
+		$data['create_by'] = $this->create_by();
+		$supplier->update($data);
         return redirect()->back()->with('success','Data has been Updated');
 	}
 

@@ -3,84 +3,99 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
+use App\Models\ProductCategory;
+use App\Traits\UserTrait;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller 
 {
+    use UserTrait;
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $data['categorys'] = ProductCategory::where('create_by',$this->create_by())->get();
+        $data['products'] = Product::where('create_by',$this->create_by())->get();
+        return view('users.product.index',$data);
+    }
 
-  /**
-   * Display a listing of the resource.
-   *
-   * @return Response
-   */
-  public function index()
-  {
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
     
-  }
+    }
 
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return Response
-   */
-  public function create()
-  {
-    
-  }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        $data['remarks'] = $this->remarks();
+        $data['create_by'] = $this->create_by();
+		Product::create($data);
+        return redirect()->back()->with('success','Data has been Added');
+    }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @return Response
-   */
-  public function store(Request $request)
-  {
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id)
+    {
     
-  }
+    }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function show($id)
-  {
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
     
-  }
+    }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function edit($id)
-  {
-    
-  }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id, Request $request)
+    {
+        $product = Product::find($id);
+        $data = $request->all();
+        $data['remarks'] = $this->remarks();
+		$data['create_by'] = $this->create_by();
+		$product->update($data);
+        return redirect()->back()->with('success','Data has been Updated');
+    }
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function update($id)
-  {
-    
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function destroy($id)
-  {
-    
-  }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        Product::find($id)->delete();
+        return redirect()->back()->with('danger','Data has been Deleted');
+    }
   
 }
 

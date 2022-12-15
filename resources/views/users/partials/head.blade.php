@@ -5,6 +5,7 @@
     <title>Ule - Bootstrap Admin Dashboard HTML Template</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('ule/assets/images/favicon.png')}}">
+    <link href="{{url('ule/assets/plugins/select2/select2.min.css')}}" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="{{url('ule/assets/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <!-- Custom Stylesheet -->

@@ -1,48 +1,49 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
+use App\Models\Coa;
 use App\Traits\UserTrait;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class CoaController extends Controller
 {
     use UserTrait;
 
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data['customers'] = Customer::where('create_by',$this->create_by())->get();
-        return view('users.customer.index',$data);
+        $data['coas'] = Coa::where('create_by',$this->create_by())->get();
+        return view('users.coa.index',$data);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-    
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $data = $request->all();
         $data['remarks'] = $this->remarks();
         $data['create_by'] = $this->create_by();
-        Customer::create($data);
+        Coa::create($data);
         return redirect()->back()->with('success','Data has been Added');
     }
 
@@ -50,37 +51,38 @@ class CustomerController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-    
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-    
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
-        $customer = Customer::find($id);
+        $coa = Coa::find($id);
         $data['remarks'] = $this->remarks();
         $data['create_by'] = $this->create_by();
-        $customer->update($data);
+        $coa->update($data);
         return redirect()->back()->with('success','Data has been Updated');
     }
 
@@ -88,13 +90,11 @@ class CustomerController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Customer::find($id)->delete();
+        Coa::find($id)->delete();
         return redirect()->back()->with('danger','Data has been Deleted');
     }
-}   
-
-?>
+}

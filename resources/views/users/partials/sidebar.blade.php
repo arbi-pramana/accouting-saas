@@ -1,36 +1,8 @@
 <div class="nk-sidebar">
     <div class="nk-nav-scroll">
         <div class="nav-user">
-            <h5>John Doe</h5>
-            <p>UI Developer</p>
-            <div class="nav-user-option">
-                <div class="setting-option">
-                    <div data-toggle="dropdown">
-                        <i class="mdi mdi-settings"></i>
-                    </div>
-                    <div class="dropdown-menu animated flipInX">
-                        <a class="dropdown-item" href="#">Account</a>
-                        <a class="dropdown-item" href="#">Lock</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </div>
-                </div>
-                <div class="notification-option">
-                    <div data-toggle="dropdown">
-                        <i class="mdi mdi-bell"></i>
-                    </div>
-                    <div class="dropdown-menu animated flipInX">
-                        <a class="dropdown-item" href="#">Email
-                            <span class="badge badge-primary pull-right m-t-3">05</span>
-                        </a>
-                        <a class="dropdown-item" href="#">Feed back
-                            <span class="badge badge-danger pull-right m-t-3">02</span>
-                        </a>
-                        <a class="dropdown-item" href="#">Report
-                            <span class="badge badge-warning pull-right m-t-3">02</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <h5>{{Auth::guard('users')->user()->name}}</h5>
+            <p>{{Auth::guard('users')->user()->type}}</p>
         </div>
         <ul class="metismenu" id="menu">
             <li class="nav-label">Main</li>
@@ -50,13 +22,13 @@
                         <a href="index.html">Transaksi Kas & Bank</a>
                     </li>
                     <li>
+                        <a href="index2.html">Entri Jurnal</a>
+                    </li>
+                    <li>
                         <a href="index.html">Pembelian</a>
                     </li>
                     <li>
                         <a href="index.html">Penjualan</a>
-                    </li>
-                    <li>
-                        <a href="index2.html">Jurnal Umum</a>
                     </li>
                     <li>
                         <a href="index3.html">Periksa Selisih</a>
@@ -100,7 +72,7 @@
             </li>
             <li class="nav-label">Setup</li>
             <li>
-                <a href="app-profile.html">
+                <a href="{{route('coa.index')}}">
                     <i class="fa fa-list"></i>
                     <span class="nav-text">Chart of Account</span>
                 </a>
@@ -112,7 +84,10 @@
                 </a>
                 <ul aria-expanded="false">
                     <li>
-                        <a href="index.html">Data Barang</a>
+                        <a href="{{route('product-category.index')}}">Kategori Barang</a>
+                    </li>
+                    <li>
+                        <a href="{{route('product.index')}}">Data Barang</a>
                     </li>
                     <li>
                         <a href="{{route('customer.index')}}">Data Pelanggan</a>
