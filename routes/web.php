@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Users\BusinessInfoController;
 use App\Http\Controllers\Users\CoaController;
 use App\Http\Controllers\Users\CustomerController;
 use App\Http\Controllers\Users\ForgotPasswordController;
@@ -41,6 +42,8 @@ Route::post('forgot-password/store-new-password',ForgotPasswordController::class
 Route::group(['middleware'=>'users.auth','prefix'=>'users'],function(){
     Route::get('logout',LoginController::class.'@logout')->name('users.logout');
     Route::get('dashboard',DashboardController::class.'@index')->name('users.dashboard');
+    Route::get('business-info',BusinessInfoController::class.'@index')->name('users.business-info');
+    Route::post('business-info',BusinessInfoController::class.'@store')->name('users.business-info.store');
     Route::resource('employee',EmployeeController::class);
     Route::resource('supplier', SupplierController::class);
     Route::resource('customer', CustomerController::class);

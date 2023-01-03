@@ -37,9 +37,6 @@
                 </a>
                 <ul aria-expanded="false">
                     <li>
-                        <a href="index.html">Transaksi Kas & Bank</a>
-                    </li>
-                    <li>
                         <a href="{{route('purchase.index')}}">Pembelian</a>
                     </li>
                     <li>
@@ -53,6 +50,11 @@
                     <span class="nav-text">Double Entry</span>
                 </a>
                 <ul aria-expanded="false">
+                    <li>
+                        <a href="{{route('coa.index')}}">
+                            Chart of Account
+                        </a>
+                    </li>
                     <li>
                         <a href="index2.html">Entri Jurnal</a>
                     </li>
@@ -78,12 +80,6 @@
             </li>
             <li class="nav-label">Setup</li>
             <li>
-                <a href="{{route('coa.index')}}">
-                    <i class="fa fa-list"></i>
-                    <span class="nav-text">Chart of Account</span>
-                </a>
-            </li>
-            <li>
                 <a class="has-arrow" href="#" aria-expanded="false">
                     <i class="mdi mdi-table-edit"></i>
                     <span class="nav-text">Data Master</span>
@@ -107,7 +103,7 @@
                 </ul>
             </li>
             <li class="">
-                <a href="documentation.html">
+                <a href="{{route('users.business-info')}}">
                     <i class="fa fa-gears"></i>
                     <span class="nav-text">Business Info</span>
                 </a>
