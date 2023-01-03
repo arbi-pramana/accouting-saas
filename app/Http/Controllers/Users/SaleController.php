@@ -4,24 +4,24 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\Coa;
-use App\Models\Journal;
+use App\Models\Customer;
 use App\Models\Product;
-use App\Models\Purchase;
+use App\Models\Sale;
 use App\Models\Supplier;
-use App\Services\Users\PurchaseService;
+use App\Services\Users\SaleService;
 use App\Traits\UserTrait;
 use Illuminate\Http\Request;
 
-class PurchaseController extends Controller
+class SaleController extends Controller
 {
     use UserTrait;
 
-    protected $purchase;
-    public function __construct(PurchaseService $purchase)
+    protected $sale;
+    public function __construct(SaleService $sale)
     {
-        $this->purchase = $purchase;
+        $this->sale = $sale;
     }
-
+    
     /**
      * Display a listing of the resource.
      *
@@ -31,9 +31,9 @@ class PurchaseController extends Controller
     {
         $data['coas'] = Coa::whereIn('category_2',["1.1 Kas","1.2 Bank"])->where('create_by',$this->create_by())->get();
         $data['products'] = Product::where('create_by',$this->create_by())->get();
-        $data['suppliers'] = Supplier::where('create_by',$this->create_by())->get();
-        $data['purchases'] = Purchase::where('create_by',$this->create_by())->get();
-        return view('users.purchase.index',$data);
+        $data['customers'] = Customer::where('create_by',$this->create_by())->get();
+        $data['sales'] = Sale::where('create_by',$this->create_by())->get();
+        return view('users.sale.index',$data);
     }
 
     /**
@@ -54,7 +54,7 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        $this->purchase->store($request);
+        $this->sale->store($request);
         return redirect()->back()->with('success','Data has been Added');
     }
 
@@ -89,7 +89,7 @@ class PurchaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->purchase->update($request,$id);
+        $this->sale->update($request,$id);
         return redirect()->back()->with('success','Data has been Updated');
     }
 
@@ -101,7 +101,7 @@ class PurchaseController extends Controller
      */
     public function destroy($id)
     {
-        Purchase::find($id)->delete();
+        Sale::find($id)->delete();
         return redirect()->back()->with('danger','Data has been Deleted');
     }
 }

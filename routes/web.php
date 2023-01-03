@@ -10,6 +10,7 @@ use App\Http\Controllers\Users\LoginController;
 use App\Http\Controllers\Users\ProductCategoryController;
 use App\Http\Controllers\Users\ProductController;
 use App\Http\Controllers\Users\PurchaseController;
+use App\Http\Controllers\Users\SaleController;
 use App\Http\Controllers\Users\SupplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,4 +48,5 @@ Route::group(['middleware'=>'users.auth','prefix'=>'users'],function(){
     Route::resource('product-category', ProductCategoryController::class);
     Route::resource('coa',CoaController::class);
     Route::resource('purchase',PurchaseController::class);
+    Route::resource('sale',SaleController::class);
 });

@@ -4,11 +4,11 @@ namespace App\Services\Users;
 
 use App\Models\Coa;
 use App\Models\Journal;
-use App\Models\Purchase;
+use App\Models\Sale;
 use App\Traits\UserTrait;
 use Illuminate\Support\Facades\DB;
 
-class PurchaseService{
+class SaleService{
     use UserTrait;
 
     public function store($request)
@@ -18,7 +18,7 @@ class PurchaseService{
             $data = $request->all();
             $data['remarks'] = $this->remarks();
             $data['create_by'] = $this->create_by();
-            Purchase::create($data);
+            Sale::create($data);
 
             DB::commit();
         } catch (\Throwable $th) {
@@ -31,11 +31,11 @@ class PurchaseService{
     {
         DB::beginTransaction();
         try {
-            $purchase = Purchase::find($id);
+            $sale = Sale::find($id);
             $data = $request->all();
             $data['remarks'] = $this->remarks();
             $data['create_by'] = $this->create_by();
-            $purchase->update($data);
+            $sale->update($data);
 
             DB::commit();
         } catch (\Throwable $th) {

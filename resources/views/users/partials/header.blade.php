@@ -23,7 +23,7 @@
         <div class="header-right">
             <ul>
                 <li class="icons">
-                    <a href="javascript:void(0)">
+                    <a href="#">
                         <i class="mdi mdi-account f-s-20" aria-hidden="true"></i>
                     </a>
                     <div class="drop-down dropdown-profile animated bounceInDown">

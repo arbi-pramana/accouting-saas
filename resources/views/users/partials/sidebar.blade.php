@@ -14,6 +14,24 @@
             </li>
             <li>
                 <a class="has-arrow" href="#" aria-expanded="false">
+                    <i class=" mdi mdi-chart-bar"></i>
+                    <span class="nav-text">Laporan</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li>
+                        <a href="index2.html">Laporan Penjualan</a>
+                    </li>
+                    <li>
+                        <a href="index3.html">Laporan Pembelian</a>
+                    </li>
+                    <li>
+                        <a href="index4.html">Kartu Stok Barang</a>
+                    </li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow" href="#" aria-expanded="false">
                     <i class="mdi mdi-book-open-page-variant"></i>
                     <span class="nav-text">Transaksi</span>
                 </a>
@@ -22,25 +40,22 @@
                         <a href="index.html">Transaksi Kas & Bank</a>
                     </li>
                     <li>
-                        <a href="index2.html">Entri Jurnal</a>
-                    </li>
-                    <li>
                         <a href="{{route('purchase.index')}}">Pembelian</a>
                     </li>
                     <li>
-                        <a href="index.html">Penjualan</a>
-                    </li>
-                    <li>
-                        <a href="index3.html">Periksa Selisih</a>
+                        <a href="{{route('sale.index')}}">Penjualan</a>
                     </li>
                 </ul>
             </li>
             <li>
                 <a class="has-arrow" href="#" aria-expanded="false">
-                    <i class=" mdi mdi-chart-bar"></i>
-                    <span class="nav-text">Laporan</span>
+                    <i class="fa fa-pencil"></i>
+                    <span class="nav-text">Double Entry</span>
                 </a>
                 <ul aria-expanded="false">
+                    <li>
+                        <a href="index2.html">Entri Jurnal</a>
+                    </li>
                     <li>
                         <a href="index.html">Laporan Neraca</a>
                     </li>
@@ -51,19 +66,10 @@
                         <a href="index.html">Laporan Trial Balance</a>
                     </li>
                     <li>
-                        <a href="index2.html">Laporan Penjualan</a>
-                    </li>
-                    <li>
-                        <a href="index3.html">Laporan Pembelian</a>
-                    </li>
-                    <li>
                         <a href="index5.html">Buku Hutang</a>
                     </li>
                     <li>
                         <a href="index6.html">Buku Piutang</a>
-                    </li>
-                    <li>
-                        <a href="index4.html">Kartu Stok Barang</a>
                     </li>
                     <li>
                         <a href="index7.html">Buku Besar</a>

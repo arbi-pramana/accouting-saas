@@ -7,7 +7,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="">Users</a>
                 </li>
-                <li class="breadcrumb-item active">Pembelian</li>
+                <li class="breadcrumb-item active">Penjualan</li>
             </ol>
         </div>
     </div>
@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-inline">
-                        <h4 class="card-title mr-4">Pembelian</h4>
+                        <h4 class="card-title mr-4">Penjualan</h4>
                         <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modalAdd"><i class="fa fa-plus"></i> Tambah Baru </button>
                     </div>
                     @if (\Session::has('danger'))
@@ -38,7 +38,7 @@
                                     <th>Document No</th>
                                     <th>Type</th>
                                     <th>Chart Of Account</th>
-                                    <th>Supplier</th>
+                                    <th>Customer</th>
                                     <th>Product Name</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
@@ -53,50 +53,50 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($purchases as $i => $purchase)
+                                @foreach($sales as $i => $sale)
                                     <tr>
                                         <td> {{$i+1}} </td>
-                                        <td> {{Format::date_format($purchase->date)}} </td>
-                                        <td> {{$purchase->document_no}} </td>
-                                        <td> {{$purchase->type}} </td>
-                                        <td> {{$purchase->coa ? $purchase->coa->name : ''}} </td>
-                                        <td> {{$purchase->supplier ? $purchase->supplier->name : ''}} </td>
-                                        <td> {{$purchase->product ? $purchase->product->name : ''}} </td>
-                                        <td> {{$purchase->quantity}} </td>
-                                        <td> {{Format::price($purchase->price)}} </td>
-                                        <td> {{Format::price($purchase->subtotal)}} </td>
-                                        <td> {{$purchase->tax_percentage}} </td>
-                                        <td> {{Format::price($purchase->tax_amount)}} </td>
-                                        <td> {{Format::price($purchase->total)}} </td>
-                                        <td> {{Format::price($purchase->payment_amount)}} </td>
-                                        <td> {{Format::price($purchase->payment_due_amount)}} </td>
-                                        <td> {{$purchase->remarks}} </td>
+                                        <td> {{Format::date_format($sale->date)}} </td>
+                                        <td> {{$sale->document_no}} </td>
+                                        <td> {{$sale->type}} </td>
+                                        <td> {{$sale->coa ? $sale->coa->name : ''}} </td>
+                                        <td> {{$sale->customer ? $sale->customer->name : ''}} </td>
+                                        <td> {{$sale->product ? $sale->product->name : ''}} </td>
+                                        <td> {{$sale->quantity}} </td>
+                                        <td> {{Format::price($sale->price)}} </td>
+                                        <td> {{Format::price($sale->subtotal)}} </td>
+                                        <td> {{$sale->tax_percentage}} </td>
+                                        <td> {{Format::price($sale->tax_amount)}} </td>
+                                        <td> {{Format::price($sale->total)}} </td>
+                                        <td> {{Format::price($sale->payment_amount)}} </td>
+                                        <td> {{Format::price($sale->payment_due_amount)}} </td>
+                                        <td> {{$sale->remarks}} </td>
                                         <td>
                                             <button type="button" class="btn btn-sm btn-primary"
-                                                id="edit-{{$purchase->id}}"
-                                                data-id="{{$purchase->id}}" 
-                                                data-date="{{$purchase->date}}" 
-                                                data-document_no="{{$purchase->document_no}}" 
-                                                data-type="{{$purchase->type}}" 
-                                                data-coa_id="{{$purchase->coa_id}}" 
-                                                data-supplier_id="{{$purchase->supplier_id}}" 
-                                                data-product_id="{{$purchase->product_id}}" 
-                                                data-quantity="{{$purchase->quantity}}" 
-                                                data-price="{{$purchase->price}}" 
-                                                data-subtotal="{{$purchase->subtotal}}" 
-                                                data-tax_percentage="{{$purchase->tax_percentage}}" 
-                                                data-tax_amount="{{$purchase->tax_amount}}" 
-                                                data-total="{{$purchase->total}}" 
-                                                data-payment_amount="{{$purchase->payment_amount}}" 
-                                                data-payment_due_amount="{{$purchase->payment_due_amount}}" 
+                                                id="edit-{{$sale->id}}"
+                                                data-id="{{$sale->id}}" 
+                                                data-date="{{$sale->date}}" 
+                                                data-document_no="{{$sale->document_no}}" 
+                                                data-type="{{$sale->type}}" 
+                                                data-coa_id="{{$sale->coa_id}}" 
+                                                data-customer_id="{{$sale->customer_id}}" 
+                                                data-product_id="{{$sale->product_id}}" 
+                                                data-quantity="{{$sale->quantity}}" 
+                                                data-price="{{$sale->price}}" 
+                                                data-subtotal="{{$sale->subtotal}}" 
+                                                data-tax_percentage="{{$sale->tax_percentage}}" 
+                                                data-tax_amount="{{$sale->tax_amount}}" 
+                                                data-total="{{$sale->total}}" 
+                                                data-payment_amount="{{$sale->payment_amount}}" 
+                                                data-payment_due_amount="{{$sale->payment_due_amount}}" 
                                                 data-toggle="modal" 
                                                 data-target="#modalEdit"
-                                                onclick="editData('{{$purchase->id}}')"
+                                                onclick="editData('{{$sale->id}}')"
                                                 ><i class="fa fa-pencil"></i> </button>
                                             <button type="button" class="btn btn-sm btn-danger" 
                                             data-toggle="modal" 
                                             data-target="#modalDelete"
-                                            onclick="deleteData('{{$purchase->id}}')"
+                                            onclick="deleteData('{{$sale->id}}')"
                                             ><i class="fa fa-trash"></i>  </button>
                                         </td>
                                     </tr>
@@ -118,7 +118,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                 </button>
             </div>
-            <form action="{{route('purchase.store')}}" method="post">
+            <form action="{{route('sale.store')}}" method="post">
                 @csrf
                 <div class="modal-body">
                     Date <br>
@@ -127,8 +127,8 @@
                     <input type="text" class="form-control" name="document_no" required><br>
                     Type <br>
                     <select name="type" class="form-control" required>
-                        <option value="Pembelian">Pembelian</option>
-                        <option value="Retur Pembelian">Retur Pembelian</option>
+                        <option value="Penjualan">Penjualan</option>
+                        <option value="Retur Penjualan">Retur Penjualan</option>
                     </select> <br>
                     Chart Of Account <br>
                     <select name="coa_id" class="form-control select2 coa" required>
@@ -137,18 +137,18 @@
                             <option value="{{$coa->id}}">{{$coa->name}}</option>
                         @endforeach
                     </select> <br><br>
-                    Supplier <br>
-                    <select name="supplier_id" class="form-control select2 supplier" required>
+                    Customer <br>
+                    <select name="customer_id" class="form-control select2 customer" required>
                         <option value=""></option>
-                        @foreach($suppliers as $supplier)
-                            <option value="{{$supplier->id}}">{{$supplier->name}}</option>
+                        @foreach($customers as $customer)
+                            <option value="{{$customer->id}}">{{$customer->name}}</option>
                         @endforeach
                     </select> <br><br>
                     Product <br>
                     <select name="product_id" class="form-control select2 product" id="product_id" required>
                         <option value=""></option>
                         @foreach($products as $product)
-                            <option value="{{$product->id}}" data-purchase_price="{{$product->purchase_price}}">{{$product->name}}</option>
+                            <option value="{{$product->id}}" data-sell_price="{{$product->sell_price}}">{{$product->name}}</option>
                         @endforeach
                     </select> <br><br>
                     Quantity <br>
@@ -195,8 +195,8 @@
                     <input type="text" class="form-control" name="document_no" id="edit-document_no" required><br>
                     Type <br>
                     <select name="type" id="edit-type" class="form-control" required>
-                        <option value="Pembelian">Pembelian</option>
-                        <option value="Retur Pembelian">Retur Pembelian</option>
+                        <option value="Penjualan">Penjualan</option>
+                        <option value="Retur Penjualan">Retur Penjualan</option>
                     </select> <br>
                     Chart Of Account <br>
                     <select name="coa_id" id="edit-coa_id" class="form-control select2 coa" required>
@@ -205,18 +205,18 @@
                             <option value="{{$coa->id}}">{{$coa->name}}</option>
                         @endforeach
                     </select> <br><br>
-                    Supplier <br>
-                    <select name="supplier_id" id="edit-supplier_id" class="form-control select2 supplier" required>
+                    Customer <br>
+                    <select name="customer_id" id="edit-customer_id" class="form-control select2 customer" required>
                         <option value=""></option>
-                        @foreach($suppliers as $supplier)
-                            <option value="{{$supplier->id}}">{{$supplier->name}}</option>
+                        @foreach($customers as $customer)
+                            <option value="{{$customer->id}}">{{$customer->name}}</option>
                         @endforeach
                     </select> <br><br>
                     Product <br>
                     <select name="product_id" class="form-control select2 product" id="edit-product_id" required>
                         <option value=""></option>
                         @foreach($products as $product)
-                            <option value="{{$product->id}}" data-purchase_price="{{$product->purchase_price}}">{{$product->name}}</option>
+                            <option value="{{$product->id}}" data-sell_price="{{$product->sell_price}}">{{$product->name}}</option>
                         @endforeach
                     </select> <br><br>
                     Quantity <br>
@@ -271,7 +271,7 @@
 @section('scripts')
 <script>
     $("#product_id,#quantity,#tax_percentage,#payment_amount").change(function(){
-        let product_price = $("#product_id").find(':selected').attr('data-purchase_price')
+        let product_price = $("#product_id").find(':selected').attr('data-sell_price')
         let qty = $("#quantity").val() 
         let price = $("#price").val(product_price)
         let subtotal = $("#subtotal").val(qty * product_price)
@@ -288,7 +288,7 @@
         $("#edit-document_no").val($("#edit-"+id).data("document_no"))
         $("#edit-type").val($("#edit-"+id).data("type"))
         $("#edit-coa_id").val($("#edit-"+id).data("coa_id"))
-        $("#edit-supplier_id").val($("#edit-"+id).data("supplier_id"))
+        $("#edit-customer_id").val($("#edit-"+id).data("customer_id"))
         $("#edit-product_id").val($("#edit-"+id).data("product_id"))
         $("#edit-quantity").val($("#edit-"+id).data("quantity"))
         $("#edit-price").val($("#edit-"+id).data("price"))
@@ -298,7 +298,7 @@
         $("#edit-total").val($("#edit-"+id).data("total"))
         $("#edit-payment_amount").val($("#edit-"+id).data("payment_amount"))
         $("#edit-payment_due_amount").val($("#edit-"+id).data("payment_due_amount"))
-        $("#editForm").attr("action","{{url('users/purchase')}}"+"/"+id)
+        $("#editForm").attr("action","{{url('users/sale')}}"+"/"+id)
 
         $(".select2").select2({
             width:"100%",
@@ -307,12 +307,12 @@
     }
     
     function deleteData(id){
-        $("#deleteForm").attr("action","{{url('users/purchase')}}"+"/"+id)
+        $("#deleteForm").attr("action","{{url('users/sale')}}"+"/"+id)
     }
 </script>
 <script>
     $("#edit-product_id,#edit-quantity,#edit-tax_percentage,#edit-payment_amount").change(function(){
-        let product_price = $("#edit-product_id").find(':selected').attr('data-purchase_price')
+        let product_price = $("#edit-product_id").find(':selected').attr('data-sell_price')
         let qty = $("#edit-quantity").val() 
         let price = $("#edit-price").val(product_price)
         let subtotal = $("#edit-subtotal").val(qty * product_price)
