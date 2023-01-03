@@ -56,7 +56,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index2.html">Entri Jurnal</a>
+                        <a href="{{route('journal.index')}}">Entri Jurnal</a>
                     </li>
                     <li>
                         <a href="index.html">Laporan Neraca</a>

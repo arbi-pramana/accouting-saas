@@ -7,6 +7,7 @@ use App\Http\Controllers\Users\ForgotPasswordController;
 use App\Http\Controllers\Users\RegisterController;
 use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\EmployeeController;
+use App\Http\Controllers\Users\JournalController;
 use App\Http\Controllers\Users\LoginController;
 use App\Http\Controllers\Users\ProductCategoryController;
 use App\Http\Controllers\Users\ProductController;
@@ -52,4 +53,5 @@ Route::group(['middleware'=>'users.auth','prefix'=>'users'],function(){
     Route::resource('coa',CoaController::class);
     Route::resource('purchase',PurchaseController::class);
     Route::resource('sale',SaleController::class);
+    Route::resource('journal',JournalController::class);
 });
