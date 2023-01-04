@@ -36,11 +36,10 @@ class Coa extends Model
         }
         $date = $date.'-'.str_pad($period,2,0,STR_PAD_LEFT);
 
-        $debit = JournalItem::where('coa_id',$id)->where('date','like','%'.$date.'%')->sum('debit');
-        $credit = JournalItem::where('coa_id',$id)->where('date','like','%'.$date.'%')->sum('credit');
+        $journals = JournalItem::where('coa_id',$id)->where('date','like','%'.$date.'%')->get();
         $coa = Coa::where('id',$id)->where('date','like','%'.$date.'%')->first();
         $coa = $coa ? $coa->total_opening_balance : 0;
-        $saldo = $coa + $debit - $credit;
+        $saldo = $coa + $journals->sum('debit') - $journals->sum('credit');
         
         return $saldo;
     }
