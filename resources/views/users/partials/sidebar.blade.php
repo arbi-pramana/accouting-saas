@@ -27,7 +27,12 @@
                     <li>
                         <a href="index4.html">Kartu Stok Barang</a>
                     </li>
-                    
+                    <li>
+                        <a href="index5.html">Buku Hutang</a>
+                    </li>
+                    <li>
+                        <a href="index6.html">Buku Piutang</a>
+                    </li>
                 </ul>
             </li>
             <li>
@@ -66,12 +71,6 @@
                     </li>
                     <li>
                         <a href="index.html">Laporan Trial Balance</a>
-                    </li>
-                    <li>
-                        <a href="index5.html">Buku Hutang</a>
-                    </li>
-                    <li>
-                        <a href="index6.html">Buku Piutang</a>
                     </li>
                     <li>
                         <a href="index7.html">Buku Besar</a>

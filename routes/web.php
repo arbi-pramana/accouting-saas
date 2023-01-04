@@ -12,6 +12,7 @@ use App\Http\Controllers\Users\LoginController;
 use App\Http\Controllers\Users\ProductCategoryController;
 use App\Http\Controllers\Users\ProductController;
 use App\Http\Controllers\Users\PurchaseController;
+use App\Http\Controllers\Users\ReportController;
 use App\Http\Controllers\Users\SaleController;
 use App\Http\Controllers\Users\SupplierController;
 use Illuminate\Support\Facades\Route;
@@ -54,4 +55,8 @@ Route::group(['middleware'=>'users.auth','prefix'=>'users'],function(){
     Route::resource('purchase',PurchaseController::class);
     Route::resource('sale',SaleController::class);
     Route::resource('journal',JournalController::class);
+    Route::get('laporan-neraca',ReportController::class.'@neraca');
+    Route::get('laporan-laba-rugi',ReportController::class.'@labaRugi');
+    Route::get('laporan-trial-balance',ReportController::class.'@trialBalance');
+    Route::get('laporan-buku-besar',ReportController::class.'@bukuBesar');
 });

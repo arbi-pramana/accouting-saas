@@ -25,6 +25,7 @@ class JournalService{
             
             foreach ($request->coa_id as $i => $value) {
                 $item = new JournalItem();
+                $item->date = $request->date;
                 $item->journal_id = $journal->id;
                 $item->coa_id = $request->coa_id[$i];
                 $item->description = $request->description[$i];
@@ -58,6 +59,7 @@ class JournalService{
             JournalItem::where('journal_id',$journal->id)->delete();
             foreach ($request->coa_id as $i => $value) {
                 $item = new JournalItem();
+                $item->date = $request->date;
                 $item->journal_id = $journal->id;
                 $item->coa_id = $request->coa_id[$i];
                 $item->description = $request->description[$i];
