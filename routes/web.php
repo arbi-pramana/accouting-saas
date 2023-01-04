@@ -55,8 +55,7 @@ Route::group(['middleware'=>'users.auth','prefix'=>'users'],function(){
     Route::resource('purchase',PurchaseController::class);
     Route::resource('sale',SaleController::class);
     Route::resource('journal',JournalController::class);
-    Route::get('laporan-neraca',ReportController::class.'@neraca');
-    Route::get('laporan-laba-rugi',ReportController::class.'@labaRugi');
-    Route::get('laporan-trial-balance',ReportController::class.'@trialBalance');
-    Route::get('laporan-buku-besar',ReportController::class.'@bukuBesar');
+    Route::get('laporan-neraca',ReportController::class.'@neraca')->name('users.report.neraca');
+    Route::get('laporan-laba-rugi',ReportController::class.'@labaRugi')->name('users.report.laba-rugi');
+    Route::get('laporan-buku-besar',ReportController::class.'@bukuBesar')->name('users.report.buku-besar');
 });

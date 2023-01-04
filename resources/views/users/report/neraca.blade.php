@@ -53,23 +53,23 @@
                             <th>Total</th>
                         </thead>
                         <tbody>
-                            @foreach($coass as $i => $coas)
+                            @foreach($collections as $i => $collections)
                                 <tr class="bg-dark">
                                     <td>{{$i}}</td>
                                     <td></td>
                                 </tr>
-                                @foreach($coas as $j => $coa)
+                                @foreach($collections as $j => $coas)
                                     <tr class="bg-light">
                                         <td style="padding-left:20px;">{{$j}}</td>
                                         <td></td>
                                     </tr>
-                                    @foreach($coa as $k => $c)
+                                    @foreach($coas as $k => $coa)
                                         <tr>
-                                            <td style="padding-left:40px;">{{$c->name}}</td>
-                                            @if(Coa::saldo($c->id) < 0)
-                                                <td class="text-danger">{{Format::price(abs(Coa::saldo($c->id)))}}</td>
+                                            <td style="padding-left:40px;">{{$coa->name}}</td>
+                                            @if(Coa::saldo($coa->id) < 0)
+                                                <td class="text-danger">{{Format::price(abs(Coa::saldo($coa->id)))}}</td>
                                             @else
-                                                <td>{{Format::price(Coa::saldo($c->id))}}</td>
+                                                <td>{{Format::price(Coa::saldo($coa->id))}}</td>
                                             @endif
                                         </tr>
                                     @endforeach

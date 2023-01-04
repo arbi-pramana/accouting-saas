@@ -53,9 +53,9 @@
                                         <td> {{$coa->category_1}} </td>
                                         <td> {{$coa->category_2}} </td>
                                         <td> {{$coa->name}} </td>
-                                        <td> {{$coa->opening_balance_db}} </td>
-                                        <td> {{$coa->opening_balance_cr}} </td>
-                                        <td> {{$coa->total_opening_balance}} </td>
+                                        <td> {{Format::price($coa->opening_balance_db)}} </td>
+                                        <td> {{Format::price($coa->opening_balance_cr)}} </td>
+                                        <td> {{Format::price($coa->total_opening_balance)}} </td>
                                         <td> {{Format::date_format($coa->date)}} </td>
                                         <td> {{$coa->remarks}} </td>
                                         <td>

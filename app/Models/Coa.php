@@ -44,4 +44,19 @@ class Coa extends Model
         
         return $saldo;
     }
+
+    public function saldoByRange($id)
+    {
+        $request = request()->all();
+        $journals = JournalItem::when(request('start'),function($q) use ($request){
+                $q->whereBetween('date',[$request['start'],$request['end']]);
+                return $q;
+            })
+            ->where('coa_id',$id)
+            ->get();
+            
+        $data['debit'] = $journals->sum('debit');
+        $data['credit'] = $journals->sum('credit');
+        return $data;
+    }
 }

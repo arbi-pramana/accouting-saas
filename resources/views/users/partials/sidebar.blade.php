@@ -64,16 +64,13 @@
                         <a href="{{route('journal.index')}}">Entri Jurnal</a>
                     </li>
                     <li>
-                        <a href="index.html">Laporan Neraca</a>
+                        <a href="{{route('users.report.neraca')}}">Laporan Neraca</a>
                     </li>
                     <li>
-                        <a href="index.html">Laporan Laba Rugi</a>
+                        <a href="{{route('users.report.laba-rugi')}}">Laporan Laba Rugi</a>
                     </li>
                     <li>
-                        <a href="index.html">Laporan Trial Balance</a>
-                    </li>
-                    <li>
-                        <a href="index7.html">Buku Besar</a>
+                        <a href="{{route('users.report.buku-besar')}}">Buku Besar</a>
                     </li>
                 </ul>
             </li>

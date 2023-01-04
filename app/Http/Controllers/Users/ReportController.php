@@ -14,7 +14,7 @@ class ReportController extends Controller
 
     public function neraca(Request $request)
     {
-        $data['coass'] = Coa::where('create_by',$this->create_by())
+        $data['collections'] = Coa::where('create_by',$this->create_by())
             ->get()
             ->groupBy(['category_1','category_2']);
         return view('users.report.neraca',$data);
@@ -32,13 +32,15 @@ class ReportController extends Controller
         return view('users.report.laba-rugi',$data);
     }
 
-    public function trialBalance(Request $request)
-    {
-        return view('users.report.trial-balance');
-    }
-
     public function bukuBesar(Request $request)
     {
-        return view('users.report.buku-besar');
+        $data['coas'] = Coa::where('create_by',$this->create_by())
+            ->when($request->start,function($q) use ($request){
+                $q->whereBetween('date',[$request->start,$request->end]);
+                return $q;
+            })
+            ->orderBy('category_1')
+            ->get();
+        return view('users.report.buku-besar',$data);
     }
 }
