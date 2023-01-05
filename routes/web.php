@@ -58,4 +58,5 @@ Route::group(['middleware'=>'users.auth','prefix'=>'users'],function(){
     Route::get('laporan-neraca',ReportController::class.'@neraca')->name('users.report.neraca');
     Route::get('laporan-laba-rugi',ReportController::class.'@labaRugi')->name('users.report.laba-rugi');
     Route::get('laporan-buku-besar',ReportController::class.'@bukuBesar')->name('users.report.buku-besar');
+    Route::get('laporan-buku-hutang',ReportController::class.'@bukuHutang')->name('users.report.buku-hutang');
 });

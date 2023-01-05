@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\Coa;
+use App\Models\Customer;
+use App\Models\Purchase;
+use App\Models\Supplier;
 use App\Traits\UserTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -42,5 +45,16 @@ class ReportController extends Controller
             ->orderBy('category_1')
             ->get();
         return view('users.report.buku-besar',$data);
+    }
+
+    public function bukuHutang(Request $request)
+    {
+        $data['purchases'] = Purchase::when($request->start,function($q) use ($request){
+                return $q->whereBetween('date',[$request->start,$request->end]);
+            })
+            ->where('create_by',$this->create_by())
+            ->get();
+        $data['suppliers'] = Supplier::where('create_by',$this->create_by())->get();
+        return view('users.report.buku-hutang',$data);
     }
 }

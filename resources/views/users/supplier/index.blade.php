@@ -40,6 +40,7 @@
                                     <th>Phone</th>
                                     <th>Address</th>
                                     <th>Description</th>
+                                    <th>Saldo Awal</th>
                                     <th>Remarks</th>
                                     <th>Action</th>
                                 </tr>
@@ -53,6 +54,7 @@
                                         <td> {{$supplier->phone}} </td>
                                         <td> {{$supplier->address}} </td>
                                         <td> {{$supplier->description}} </td>
+                                        <td> {{Format::price($supplier->opening_balance)}} </td>
                                         <td> {{$supplier->remarks}} </td>
                                         <td>
                                             <button type="button" class="btn btn-sm btn-primary"
@@ -63,6 +65,7 @@
                                                 data-phone="{{$supplier->phone}}" 
                                                 data-address="{{$supplier->address}}" 
                                                 data-description="{{$supplier->description}}" 
+                                                data-opening_balance="{{$supplier->opening_balance}}" 
                                                 data-toggle="modal" 
                                                 data-target="#modalEdit"
                                                 onclick="editData('{{$supplier->id}}')"
@@ -102,9 +105,11 @@
                     Phone <br>
                     <input type="text" class="form-control" name="phone" required><br>
                     Address <br>
-                    <textarea name="address" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="address" class="form-control" cols="30" rows="10"></textarea><br>
                     Description <br>
-                    <textarea name="description" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="description" class="form-control" cols="30" rows="10"></textarea><br>
+                    Saldo Awal <br>
+                    <input type="text" class="form-control" name="opening_balance" required><br>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -134,10 +139,12 @@
                     Phone <br>
                     <input type="text" class="form-control" id="edit-phone" name="phone" required><br>
                     Address <br>
-                    <textarea name="address" id="edit-address" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="address" id="edit-address" class="form-control" cols="30" rows="10"></textarea><br>
                     Description <br>
-                        <textarea name="description" id="edit-description" class="form-control" cols="30" rows="10"></textarea>
-                    </div>
+                    <textarea name="description" id="edit-description" class="form-control" cols="30" rows="10"></textarea><br>
+                    Saldo Awal <br>
+                    <input type="text" name="opening_balance" id="edit-opening_balance" class="form-control" required><br>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <input type="submit" class="btn btn-success" value="Save changes">
@@ -178,6 +185,7 @@
         $("#edit-phone").val($("#edit-"+id).data("phone"))
         $("#edit-address").val($("#edit-"+id).data("address"))
         $("#edit-description").val($("#edit-"+id).data("description"))
+        $("#edit-opening_balance").val($("#edit-"+id).data("opening_balance"))
         $("#editForm").attr("action","{{url('users/supplier')}}"+"/"+id)
     }
     
